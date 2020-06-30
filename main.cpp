@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QQmlContext>
 #include <file.h>
+#include <QString>
 
 int main(int argc, char *argv[])
 {

@@ -19,4 +19,6 @@ bool File::write(const QString &source)
        file.close();
        qDebug() << "HTML файл сохранен";
     }
+    return true;
 }
+

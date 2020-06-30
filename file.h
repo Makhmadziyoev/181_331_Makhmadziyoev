@@ -1,6 +1,6 @@
 #ifndef FILE_H
 #define FILE_H
-
+#include <QString>
 #include <QObject>
 
 class File : public QObject
