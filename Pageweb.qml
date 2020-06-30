@@ -47,6 +47,9 @@ Page{
     }
 
 GridLayout{
+    anchors.fill: parent
+    columns: 3
+    rows: 3
 
 RoundButton{
     id: rdb
@@ -65,6 +68,9 @@ contentItem: Text {
 WebView{
     id: webv
     url: pathToFile
+    visible:  true
+    width: parent.width
+    height: parent.height*0.7
 }
 
 }

@@ -11,7 +11,7 @@ bool File::write(const QString &source)
 {
     qDebug() << source;
 
-    QFile file("F:/181_331_Makhmadziyoev/181_331_Makhmadziyoevpage.html/page.html");
+    QFile file("F:/181_331_Makhmadziyoev/181_331_Makhmadziyoev/page.html");
     if(file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
        QTextStream stream(&file);
