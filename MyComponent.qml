@@ -68,9 +68,11 @@ Page {
             Layout.column: 0
             Layout.columnSpan: 3
             Layout.fillWidth: true
+            wrapMode: TextEdit.Wrap
             ScrollBar {
             clip: true
             }
+
 
         }
 
@@ -83,7 +85,9 @@ Page {
         }
 
 
-        ComboBox{}
+        ComboBox{
+
+        }
         CheckBox{
         text: "Wrap"
         }
