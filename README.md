@@ -16,7 +16,7 @@ mospolytech.ru
 
 # Снимки
 
-<img src="https://funkyimg.com/i/361S9.png" width=300>  <img src="https://funkyimg.com/i/361Sa.png" width=300>  <img src="https://funkyimg.com/i/361Sb.png" width=300>
+<img src="https://funkyimg.com/i/361TM.png" width=300>  <img src="https://funkyimg.com/i/361TN.png" width=300>  <img src="https://funkyimg.com/i/361TP.png" width=300>
 
 # О создании приложения
 Приложение созданно в среде разработки QT, в качестве экзаменационной работы в формате WordSkils! 
