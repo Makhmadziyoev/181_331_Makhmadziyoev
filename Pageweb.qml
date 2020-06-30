@@ -67,13 +67,7 @@ Page{
 //            }
             }
 
-//            gradient: Gradient {
-//                GradientStop { position: 0.0; color: "#7fff00" }
-//                GradientStop { position: 0.25; color: "#7fff00" }
-//                GradientStop { position: 0.5; color: "#7fff00" }
-//                GradientStop { position: 0.75; color: "#7fff00" }
-//                GradientStop { position: 1.0; color: "#7fff00" }
-//            }
+
         }
     }
 
