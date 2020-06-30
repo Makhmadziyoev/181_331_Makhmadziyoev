@@ -35,6 +35,21 @@ Page{
             anchors.left: txt444.right
             onClicked: swipeView.currentIndex = 2
             }
+            RoundButton{
+                id: rdb
+            text: "Обновить"
+            anchors.left: but1.right
+            onClicked: webv.reload();
+            background: Rectangle {
+                color: rdb.down ? "#0000ff":"#0000ff"
+                radius: 10
+            }
+            contentItem: Text {
+                text: rdb.text
+                font: rdb.font
+                color: rdb.down ? "green" : "white"
+            }
+            }
 
             gradient: Gradient {
                 GradientStop { position: 0.0; color: "#1e90ff" }
@@ -51,20 +66,7 @@ GridLayout{
     columns: 3
     rows: 3
 
-RoundButton{
-    id: rdb
-text: "Обновить"
-onClicked: webv.reload();
-background: Rectangle {
-    color: rdb.down ? "#0000ff":"#0000ff"
-    radius: 10
-}
-contentItem: Text {
-    text: rdb.text
-    font: rdb.font
-    color: rdb.down ? "green" : "white"
-}
-}
+
 WebView{
     id: webv
     url: pathToFile
