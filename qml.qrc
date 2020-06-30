@@ -6,5 +6,6 @@
         <file>qtquickcontrols2.conf</file>
         <file>MyComponent.qml</file>
         <file>pol.png</file>
+        <file>Pageweb.qml</file>
     </qresource>
 </RCC>

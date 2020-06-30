@@ -1,5 +1,9 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QDebug>
+#include <QFile>
+#include <QQmlContext>
+#include <file.h>
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +19,11 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
+    QQmlContext *context = engine.rootContext();
+    File file;
+    context->setContextProperty("file", &file);
+    QObject::connect (engine.rootObjects().first(), SIGNAL(writeFile(QString)), &file, SLOT(write(QString)));
+    engine.rootContext()->setContextProperty("pathToFile", "file:///F:/181_331_Makhmadziyoev/181_331_Makhmadziyoevpage.html/page.html");
 
     return app.exec();
 }

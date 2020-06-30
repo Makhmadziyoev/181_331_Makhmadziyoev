@@ -12,6 +12,10 @@ ApplicationWindow {
     height: 640
     title: qsTr("Tabs")
 
+
+    signal writeFile(string text);
+
+
     SwipeView {
         id: swipeView
         anchors.fill: parent
@@ -23,6 +27,9 @@ ApplicationWindow {
         Page2Form {
         }
         MyComponent {
+        }
+        Pageweb {
+            id: pageweb
         }
     }
 
@@ -38,6 +45,9 @@ ApplicationWindow {
         }
         TabButton {
             text: qsTr("Exam")
+        }
+        TabButton {
+            text: qsTr("Web")
         }
     }
 

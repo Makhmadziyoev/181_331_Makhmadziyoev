@@ -27,19 +27,19 @@ Page {
                 color: "#ff8c00"
                 text: "Заголовок"
                 anchors.top:parent.top
-
+                anchors.horizontalCenter: parent.horizontalCenter
             }
-            Button{
-                id: but1
-            text:  "1"
-            anchors.left: txt4.right
-            onClicked: swipeView.currentIndex = 0
-            }
-            Button {
-            text: "2"
-            anchors.left: but1.right
-            onClicked: swipeView.currentIndex = 2
-            }
+//            RoundButton{
+//                id: but1
+//            text:  "1"
+//            anchors.left: txt4.right
+//            onClicked: swipeView.currentIndex = 0
+//            }
+//            RoundButton {
+//            text: "2"
+//            anchors.left: but1.right
+//            onClicked: swipeView.currentIndex = 2
+//            }
             gradient: Gradient {
                 GradientStop { position: 0.0; color: "#1e90ff" }
                 GradientStop { position: 0.25; color: "#1e90ff" }
@@ -56,21 +56,33 @@ Page {
         columns: 3
         rows: 3
 
-        Button {
-        text:  "сохранить"
+        RoundButton {
+        text:  "💾" //сохранить
+        onClicked: writeFile(txt1.text);
+
         }
 
         TextArea{
+            id: txt1
             Layout.row: 2
             Layout.column: 0
             Layout.columnSpan: 3
             Layout.fillWidth: true
+            ScrollBar {
+            clip: true
+            }
 
         }
 
-        Button {
-        text: "Предпросмотр"
+        RoundButton {
+        text: "📰" //предпросмотр
+        onClicked: {swipeView.currentIndex = 3;
+                   writeFile(txt1.text);
+                   //webv.reload("https://vk.com");
         }
+        }
+
+
         ComboBox{}
         CheckBox{
         text: "Wrap"
