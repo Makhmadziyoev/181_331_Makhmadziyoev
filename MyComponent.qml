@@ -89,7 +89,10 @@ Page {
 
         }
         CheckBox{
+            id: chb
         text: "Wrap"
+        onClicked: TextEdit.NoWrap
+        //chb.down: TextEdit.NoWrap
         }
     }
 
