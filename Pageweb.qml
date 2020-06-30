@@ -17,15 +17,16 @@ Page{
 
             Text {
                 id: txt444
+                anchors.horizontalCenter: parent.horizontalCenter
                 //anchors.verticalCenter: parent.verticalCenter
                 //anchors.horizontalCenter: parent.horizontalCenter
                 anchors.right: txt444.left
-                font.pointSize: 35
+                font.pointSize: 25
                 font.family: "Dupe"
                 //font.italic: true
                 font.bold: true
                 color: "#ff8c00"
-                text: "Предппросмотр"
+                text: "Предпросмотр"
                 anchors.top:parent.top
 
             }
@@ -33,12 +34,24 @@ Page{
                 id: but1
             text: "←" //"Назад"
             anchors.left: txt444.right
-            onClicked: swipeView.currentIndex = 2
+            font.bold: true
+            background: Rectangle {
+                color: but1.down ? "#0000ff":"#0000ff"
+                radius: 10
             }
+            contentItem: Text {
+                text: but1.text
+                font: but1.font
+                color: but1.down ? "green" : "white"
+            }
+            onClicked: swipeView.currentIndex = 0
+            }
+
+
             RoundButton{
                 id: rdb
             text: "Обновить"
-            anchors.left: but1.right
+            anchors.right: txt444.left
             onClicked: webv.reload();
             background: Rectangle {
                 color: rdb.down ? "#0000ff":"#0000ff"

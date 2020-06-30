@@ -15,12 +15,34 @@ Page {
             implicitHeight: 50
             width: parent.width
 
+
+//            MouseArea {
+//               onClicked: dr1.open();
+//            Label {
+//            text: " ░ "
+//            font.pointSize: 25
+//            anchors.left:parent.left
+
+//            }
+//}
+
+            Button{
+                text: " ░ "
+                id:hmd
+                flat: true
+                font.pointSize: 20
+                anchors.left:parent.left
+                onClicked: dr1.open();
+
+            }
+
+
             Text {
                 id: txt4
                 //anchors.verticalCenter: parent.verticalCenter
                 //anchors.horizontalCenter: parent.horizontalCenter
                 anchors.right: txt44.left
-                font.pointSize: 35
+                font.pointSize: 25
                 font.family: "Dupe"
                 //font.italic: true
                 font.bold: true
@@ -62,23 +84,11 @@ Page {
 
         }
 
-        TextArea{
-            id: txt1
-            Layout.row: 2
-            Layout.column: 0
-            Layout.columnSpan: 3
-            Layout.fillWidth: true
-            wrapMode: TextEdit.Wrap
-            ScrollBar {
-            clip: true
-            }
 
-
-        }
 
         RoundButton {
         text: "📰" //предпросмотр
-        onClicked: {swipeView.currentIndex = 3;
+        onClicked: {swipeView.currentIndex = 1;
                    writeFile(txt1.text);
                    //webv.reload("https://vk.com");
         }
@@ -92,8 +102,40 @@ Page {
             id: chb
         text: "Wrap"
         onClicked: TextEdit.NoWrap
+        //wrapMode: chb.checkState === Qt.Checked ? TextArea.Wrap : TextArea.NoWrap
         //chb.down: TextEdit.NoWrap
         }
+
+        Rectangle {
+            Layout.preferredWidth: 480
+            Layout.preferredHeight: 380
+            Layout.row: 2
+            Layout.column: 0
+            Layout.columnSpan: 3
+
+//            ScrollBar {
+//            clip: true
+//            Layout.leftMargin: 300
+            ScrollView {
+                anchors.fill: parent
+            TextArea{
+                id: txt1
+                anchors.fill: parent
+                //Layout.fillWidth: true
+                wrapMode: TextEdit.Wrap
+    //            Layout.preferWidth: 380
+    //            Layout.preferHeight: 50
+    //            width: 380
+    //            height: 10
+
+
+
+
+          }
+
+            }
+        }
+
     }
 
 
