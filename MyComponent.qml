@@ -12,6 +12,8 @@ Page {
         ToolBar{
         anchors.top: parent.top
         background: Rectangle{
+            color:  "#1588b5"
+
             implicitHeight: 50
             width: parent.width
 
@@ -46,87 +48,119 @@ Page {
                 font.family: "Dupe"
                 //font.italic: true
                 font.bold: true
-                color: "#ff8c00"
+                color: "#FFFFFF"
                 text: "Заголовок"
                 anchors.top:parent.top
                 anchors.horizontalCenter: parent.horizontalCenter
             }
-//            RoundButton{
-//                id: but1
-//            text:  "1"
-//            anchors.left: txt4.right
-//            onClicked: swipeView.currentIndex = 0
-//            }
-//            RoundButton {
-//            text: "2"
-//            anchors.left: but1.right
-//            onClicked: swipeView.currentIndex = 2
-//            }
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#1e90ff" }
-                GradientStop { position: 0.25; color: "#1e90ff" }
-                GradientStop { position: 0.5; color: "#1e90ff" }
-                GradientStop { position: 0.75; color: "#1e90ff" }
-                GradientStop { position: 1.0; color: "#1e90ff" }
-            }
+
         }
     }
 
 
     GridLayout {
         anchors.fill: parent
-        columns: 3
+        columns: 4
         rows: 3
 
         RoundButton {
+            Material.background: "#3dd283"
+            Layout.column: 0
+            Layout.row: 0
         text:  "💾" //сохранить
         onClicked: writeFile(txt1.text);
-
         }
-
-
 
         RoundButton {
         text: "📰" //предпросмотр
+        Material.background: "#3dd283"
+        Layout.row: 0
+        Layout.column: 2
         onClicked: {swipeView.currentIndex = 1;
                    writeFile(txt1.text);
                    //webv.reload("https://vk.com");
         }
         }
 
+        RoundButton {
+        id: mn_btn
+        Material.background: "#3dd283"
+        Layout.row: 0
+        Layout.column: 3
+        text: "↔"
+        //icon.source: "qrc:/Media/Icons/plus.png"
+        //icon.color: mn_btn.pressed ? "#9ca2b0":"#15888b5"
 
-        ComboBox{
+        anchors.left: prv_btn.right
+        onClicked:addmn.open()
+        Menu{
+        id: addmn
+
+        MenuItem {
+        text: "h1"
+        onClicked: txt1.insert(txt1.cursorPosition,"<h1></h1>")
+
 
         }
-        CheckBox{
-            id: chb
-        text: "Wrap"
-        onClicked: TextEdit.NoWrap
-        //wrapMode: chb.checkState === Qt.Checked ? TextArea.Wrap : TextArea.NoWrap
-        //chb.down: TextEdit.NoWrap
+        MenuItem {
+        text: "h2"
+        onClicked: txt1.insert(txt1.cursorPosition,"<h2></h2>")
+
+
         }
+        MenuItem {
+        text: "div"
+        onClicked: txt1.insert(txt1.cursorPosition,"<div></div>")
+
+
+        }
+        MenuItem {
+        text: "img"
+        onClicked: txt1.insert(txt1.cursorPosition,"<img src=\"\" alt=\"\">")
+
+
+        }
+        MenuItem {
+        text: "img"
+        onClicked: txt1.insert(txt1.cursorPosition,"<a> </a>")
+
+
+        }
+        }
+
+
+        }
+
+        RoundButton {
+            Layout.row: 0
+            Layout.column: 1
+            Material.background: "#3dd283"
+            Material.foreground: "#FFFFFF"
+            id: chb2
+            text: "Wrap"
+            onClicked: txt1.wrapMode=TextArea.WrapAnywhere
+        }
+
 
         Rectangle {
             Layout.preferredWidth: 480
             Layout.preferredHeight: 380
             Layout.row: 2
             Layout.column: 0
-            Layout.columnSpan: 3
+            Layout.columnSpan: 4
 
-//            ScrollBar {
-//            clip: true
-//            Layout.leftMargin: 300
+
             ScrollView {
                 anchors.fill: parent
+
+
             TextArea{
                 id: txt1
-                anchors.fill: parent
-                //Layout.fillWidth: true
-                wrapMode: TextEdit.Wrap
-    //            Layout.preferWidth: 380
-    //            Layout.preferHeight: 50
-    //            width: 380
-    //            height: 10
+
+                Layout.fillWidth: true
+
+                wrapMode: {if(chb.checked){TextArea.WrapAnywhere}else{TextArea.NoWrap}}
+
 
 
 

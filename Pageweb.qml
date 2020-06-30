@@ -14,6 +14,7 @@ Page{
         background: Rectangle{
             implicitHeight: 50
             width: parent.width
+            color:  "#1588b5"
 
             Text {
                 id: txt444
@@ -25,7 +26,7 @@ Page{
                 font.family: "Dupe"
                 //font.italic: true
                 font.bold: true
-                color: "#ff8c00"
+                color: "#FFFFFF"
                 text: "Предпросмотр"
                 anchors.top:parent.top
 
@@ -35,15 +36,16 @@ Page{
             text: "←" //"Назад"
             anchors.left: txt444.right
             font.bold: true
-            background: Rectangle {
-                color: but1.down ? "#0000ff":"#0000ff"
-                radius: 10
-            }
-            contentItem: Text {
-                text: but1.text
-                font: but1.font
-                color: but1.down ? "green" : "white"
-            }
+            flat: true
+//            background: Rectangle {
+//                color: but1.down ? "#0000ff":"#0000ff"
+//                radius: 10
+//            }
+//            contentItem: Text {
+//                text: but1.text
+//                font: but1.font
+//                color: but1.down ? "green" : "white"
+//            }
             onClicked: swipeView.currentIndex = 0
             }
 
@@ -53,24 +55,25 @@ Page{
             text: "Обновить"
             anchors.right: txt444.left
             onClicked: webv.reload();
-            background: Rectangle {
-                color: rdb.down ? "#0000ff":"#0000ff"
-                radius: 10
-            }
-            contentItem: Text {
-                text: rdb.text
-                font: rdb.font
-                color: rdb.down ? "green" : "white"
-            }
+            flat: true
+//            background: Rectangle {
+//                color: rdb.down ? "#0000ff":"#0000ff"
+//                radius: 10
+//            }
+//            contentItem: Text {
+//                text: rdb.text
+//                font: rdb.font
+//                color: rdb.down ? "green" : "white"
+//            }
             }
 
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#1e90ff" }
-                GradientStop { position: 0.25; color: "#1e90ff" }
-                GradientStop { position: 0.5; color: "#1e90ff" }
-                GradientStop { position: 0.75; color: "#1e90ff" }
-                GradientStop { position: 1.0; color: "#1e90ff" }
-            }
+//            gradient: Gradient {
+//                GradientStop { position: 0.0; color: "#7fff00" }
+//                GradientStop { position: 0.25; color: "#7fff00" }
+//                GradientStop { position: 0.5; color: "#7fff00" }
+//                GradientStop { position: 0.75; color: "#7fff00" }
+//                GradientStop { position: 1.0; color: "#7fff00" }
+//            }
         }
     }
 
